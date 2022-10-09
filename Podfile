@@ -6,7 +6,7 @@ target 'Ozma' do
   use_frameworks!
 
   # Pods for Ozma
-  pod 'Ozma_Data', :path => 'Ozma_Lib'
+  pod 'Ozma_Data', :path => 'Ozma_Library/Ozma_Data'
 
   target 'OzmaTests' do
     inherit! :search_paths

@@ -1,0 +1,16 @@
+PODS:
+  - Ozma_Data (1.0)
+
+DEPENDENCIES:
+  - Ozma_Data (from `Ozma_Library/Ozma_Data`)
+
+EXTERNAL SOURCES:
+  Ozma_Data:
+    :path: Ozma_Library/Ozma_Data
+
+SPEC CHECKSUMS:
+  Ozma_Data: f21c4f93a8f53254b0037dcc9de993ebcf2b9661
+
+PODFILE CHECKSUM: f54b6abe26b1c1aeb588077f1d7205797241d03a
+
+COCOAPODS: 1.11.3
