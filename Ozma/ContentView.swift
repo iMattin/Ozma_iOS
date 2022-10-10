@@ -7,15 +7,38 @@
 
 import SwiftUI
 
+@MainActor
+class ViewModel: ObservableObject {
+
+    @Published var pageInfo: String?
+
+    private let service: HTMLServiceProtocol
+
+    init(service: HTMLServiceProtocol) {
+        self.service = service
+    }
+
+    func load() async {
+        let page = await service.getPage()
+        self.pageInfo = page
+    }
+}
+
 struct ContentView: View {
+
+    @ObservedObject var viewModel: ViewModel
+
     var body: some View {
-        Text("Hello, world!")
+        Text(viewModel.pageInfo ?? "Loading...")
             .padding()
+            .onAppear {
+                Task { await viewModel.load() }
+            }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: ViewModel(service: MockHTMLService()))
     }
 }

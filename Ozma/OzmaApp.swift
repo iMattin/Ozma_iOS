@@ -11,7 +11,7 @@ import SwiftUI
 struct OzmaApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: ViewModel(service: HTMLService()))
         }
     }
 }
